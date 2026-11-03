@@ -42,7 +42,7 @@ The new site sells one idea to agencies in expensive markets (DE, AT, CH, NL, No
 
 ## Open (owner)
 - Pricing currency: the old site said "$450+"; the new one says "€450". Confirm.
-- Confirm the three testimonials are real and approved for use, and the spelling "Kristaps Apeināns".
+- Confirm the three testimonials are real and approved for use. Matīss Seipulāns and Katrīna Malacanova are on the Marketinga Skola team page, so two "agency partner" quotes come from people who now work with us. ("Kristaps Apeināns" spelling confirmed from the Marketinga Skola team page.)
 - Services beyond Meta (Google & YouTube, TikTok, creative, tracking): cut any you won't deliver.
 - Legal entity for the privacy notice (currently Rihards Zeila as controller).
 - Go-live: SiteGround SSH host/user for whitelabelmedia.eu, a GitHub repo and the `SG_*` secrets.
