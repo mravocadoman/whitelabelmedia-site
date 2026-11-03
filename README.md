@@ -55,4 +55,6 @@ Push to `main`, and GitHub Actions (`.github/workflows/deploy.yml`) does the res
 
 `index.html` takes precedence over WordPress's `index.php`, and real files and folders bypass the WordPress rewrite in `.htaccess`.
 
+`googlec3673720e3b0e240.html` verifies the site in Google Search Console. Never delete it.
+
 The repo secrets are `SG_SSH_KEY`, `SG_HOST` (`ssh.whitelabelmedia.eu`) and `SG_USER` (`u1948-imugigqeavm9`). The deploy key lives at `~/.ssh/whitelabelmedia_siteground` on Rihards' Mac and is imported as "Github deploy" in Site Tools → Devs → SSH Keys Manager for this site. New top-level files or folders have to be added to the rsync list.
