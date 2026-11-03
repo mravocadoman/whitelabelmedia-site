@@ -45,4 +45,6 @@ Push to `main`, and GitHub Actions (`.github/workflows/deploy.yml`) does the res
 2. Rsyncs the site files over SSH (port 18765) into `www/whitelabelmedia.eu/public_html/`, without `--delete`, so the old WordPress install stays in place.
 3. Flushes the SiteGround cache.
 
-`index.html` takes precedence over WordPress's `index.php`. The workflow needs the repo secrets `SG_SSH_KEY`, `SG_HOST` and `SG_USER` for the SiteGround site that hosts whitelabelmedia.eu. New top-level files or folders have to be added to the rsync list.
+`index.html` takes precedence over WordPress's `index.php`, and real files and folders bypass the WordPress rewrite in `.htaccess`.
+
+The repo secrets are `SG_SSH_KEY`, `SG_HOST` (`ssh.whitelabelmedia.eu`) and `SG_USER` (`u1948-imugigqeavm9`). The deploy key lives at `~/.ssh/whitelabelmedia_siteground` on Rihards' Mac and is imported as "Github deploy" in Site Tools → Devs → SSH Keys Manager for this site. New top-level files or folders have to be added to the rsync list.
