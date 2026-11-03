@@ -38,8 +38,12 @@ Every e-mail carries Rihards' name, White Label Media, a postal address and a on
 Track every prospect in the Google Sheet **White Label Media: prospects** (https://docs.google.com/spreadsheets/d/1lGWqxCYWlV_3AZCdUd97rk9hrHTx9G4nUDm5E8ghzcs/edit, in Rihards' Drive). The **Prospects** tab has one row per agency with dropdowns for status, channel and step. A next-touch date that's due turns lime, and ticking Opt-out strikes the row through. **Funnel** counts each stage; **Opt-outs** is the suppression list. Check it before every send.
 
 ## Sending setup (before the first cold e-mail)
-- whitelabelmedia.eu already has SPF, DKIM and DMARC (checked 2026-11-03). **Don't send cold e-mail from it.** Use a second domain (for example `getwhitelabelmedia.eu`) with 2–3 mailboxes, so a spam complaint can't hurt the main domain.
-- Warm the new mailboxes for 2–3 weeks, then stay at 30–40 cold e-mails per mailbox per day.
+- whitelabelmedia.eu already has SPF, DKIM and DMARC (checked 2026-11-03). **Don't send cold e-mail from it**: one spam complaint wave would hit the domain the site and replies depend on.
+- **Sending domain: `getwhitelabelmedia.eu`** (EURid status AVAILABLE on 2026-11-04; `getwhitelabelmedia.com` also looked free). Buy it at SiteGround so its DNS sits next to the main site.
+- **Mailbox:** add it as a secondary domain in the existing Google Workspace and create `rihards@getwhitelabelmedia.eu`. An alias is free and enough at this volume; a separate user costs one seat and keeps the cold inbox apart. Either way, replies stay in Gmail.
+- **DNS for the new domain:** Google MX records; SPF `v=spf1 include:_spf.google.com ~all`; DKIM generated in Workspace (Admin → Apps → Gmail → Authenticate email); DMARC `v=DMARC1; p=none; rua=mailto:rihards@getwhitelabelmedia.eu` at first. Forward the web address to https://whitelabelmedia.eu so anyone who checks the domain lands on the real site.
+- **Warm-up, 2 weeks:** send and reply to normal e-mails from the new address every day (colleagues, friends, newsletters you actually read), 5 a day rising to 20. No warm-up tool needed at this volume.
+- **No sending tool yet.** With 12 UK/IE prospects, send by hand from Gmail using the **Drafts** tab in the tracker, a few a day. Add Instantly, lemlist or Smartlead (with their warm-up) only once you're past about 50 new contacts a week, then stay at 30–40 cold e-mails per mailbox per day.
 - Plain text, one link at most, no open-tracking pixel, no attachments in the first e-mail.
 - Every link to the site carries UTMs. The site saves them with each request, so every lead shows its campaign and step:
   `?utm_source=coldemail&utm_medium=outreach&utm_campaign=uk-agencies-q4&utm_content=e1`
