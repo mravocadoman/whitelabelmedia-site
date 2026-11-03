@@ -27,9 +27,9 @@ Port 4174 matters: the n8n workflow only echoes CORS for `localhost:4174`, `127.
 
 ## Tracking
 
-`TRACKING` at the top of the tracking block in `main.js` holds the GA4, Meta Pixel and LinkedIn Insight IDs. Empty IDs mean no banner and no third-party requests. With any ID set, a cookie banner appears, Consent Mode v2 starts denied, and nothing from Google, Meta or LinkedIn loads until the visitor presses Accept ("Cookie settings" in the footer reopens it; rejecting after accepting reloads the page).
+`TRACKING` at the top of the tracking block in `main.js` holds the GA4, Meta Pixel and LinkedIn Insight IDs. Live since 2026-11-03: GA4 `G-ZNW3ZZTVMP` (property "White Label Media (whitelabelmedia.eu)" in the Marketinga Skola GA account, stream 16265650902) and Meta pixel `895645480904702` (the previously unused "Rihards Zeila's Pixel" on ad account 2001724499883514; Meta allows one dataset per ad account). LinkedIn is not set. Empty IDs mean no banner and no third-party requests. With any ID set, a cookie banner appears, Consent Mode v2 starts denied, and nothing from Google, Meta or LinkedIn loads until the visitor presses Accept ("Cookie settings" in the footer reopens it; rejecting after accepting reloads the page).
 
-Events (GA4 name → Meta): `generate_lead` → `Lead` (with an `eventID` that is also sent to n8n as `event_id`, for Conversions API deduplication later), `contact_click` → `Contact`, `calculator_use` → `CalculatorUsed`, `report_demo` → `ReportDemoUsed`, `form_start` → `RequestStarted`, `case_open` → `CaseOpened`, plus GA4-only `form_step`. Never put names, e-mails or messages in event params.
+Events (GA4 name → Meta): `generate_lead` → `Lead` (with an `eventID` that is also sent to n8n as `event_id`, for Conversions API deduplication later), `contact_click` → `Contact`, `calculator_use` → `CalculatorUsed`, `report_demo` → `ReportDemoUsed`, `request_start` → `RequestStarted`, `case_open` → `CaseOpened`, plus GA4-only `request_step` (named so they don't collide with GA4's own enhanced-measurement `form_start`). Never put names, e-mails or messages in event params.
 
 When you set or remove an ID, keep the provider list under Cookies in `privacy/index.html` in step.
 

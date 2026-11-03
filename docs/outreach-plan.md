@@ -35,7 +35,7 @@ Every e-mail carries Rihards' name, White Label Media, a postal address and a on
 3. **Contacts:** founder or MD name from the site or LinkedIn; e-mail via Hunter or Apollo (both connectors need authorising with `/mcp` before I can use them).
 4. **LinkedIn by hand only.** No automation tools, scrapers or browser agents on Rihards' account: LinkedIn paused search on it after an automated run in October.
 
-Track every prospect in one sheet or n8n table: agency, site, country, size, contact, role, e-mail, LinkedIn URL, signal, personal line, sequence step, last touch, reply, outcome, opt-out.
+Track every prospect in the Google Sheet **White Label Media: prospects** (https://docs.google.com/spreadsheets/d/1lGWqxCYWlV_3AZCdUd97rk9hrHTx9G4nUDm5E8ghzcs/edit, in Rihards' Drive). The **Prospects** tab has one row per agency with dropdowns for status, channel and step. A next-touch date that's due turns lime, and ticking Opt-out strikes the row through. **Funnel** counts each stage; **Opt-outs** is the suppression list. Check it before every send.
 
 ## Sending setup (before the first cold e-mail)
 - whitelabelmedia.eu already has SPF, DKIM and DMARC (checked 2026-11-03). **Don't send cold e-mail from it.** Use a second domain (for example `getwhitelabelmedia.eu`) with 2–3 mailboxes, so a spam complaint can't hurt the main domain.

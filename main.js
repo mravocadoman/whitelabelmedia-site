@@ -41,7 +41,7 @@
   /* ---------- Tracking: nothing from Google, Meta or LinkedIn loads until the visitor accepts ----------
      Fill in an ID to switch that tag on; with all three empty there is no banner and no tags.
      List only the switched-on providers in /privacy/#cookies. */
-  const TRACKING = { ga4: '', meta: '', linkedin: '' };
+  const TRACKING = { ga4: 'G-ZNW3ZZTVMP', meta: '895645480904702', linkedin: '' };
   const CONSENT = 'wlm-consent';
   const providers = [TRACKING.ga4 && 'Google Analytics', TRACKING.meta && 'Meta', TRACKING.linkedin && 'LinkedIn'].filter(Boolean);
   window.dataLayer = window.dataLayer || [];
@@ -50,7 +50,7 @@
 
   // Standard Meta events for conversions, custom ones for retargeting audiences. Never send personal data here.
   const META = { generate_lead: 'Lead', contact_click: 'Contact' };
-  const META_CUSTOM = { calculator_use: 'CalculatorUsed', report_demo: 'ReportDemoUsed', form_start: 'RequestStarted', case_open: 'CaseOpened' };
+  const META_CUSTOM = { calculator_use: 'CalculatorUsed', report_demo: 'ReportDemoUsed', request_start: 'RequestStarted', case_open: 'CaseOpened' };
   function track(name, params = {}, eventId) {
     try {
       gtag('event', name, params);
@@ -309,7 +309,7 @@
     next.hidden = n === 3;
     submit.hidden = n !== 3;
     say('');
-    if (n > 1) track('form_step', { step: n });
+    if (n > 1) track('request_step', { step: n });
     if (focus) steps[n - 1].querySelector('input:not([type=hidden]), select, textarea')?.focus({ preventScroll: true });
   }
 
@@ -353,7 +353,7 @@
       else if (el.type === 'radio') { if (el.name in d) el.checked = d[el.name] === el.value; } else if (el.name in d) el.value = d[el.name];
     }
   }
-  wizard.addEventListener('input', once(() => track('form_start')));
+  wizard.addEventListener('input', once(() => track('request_start')));
   wizard.addEventListener('input', saveDraft);
   wizard.addEventListener('change', saveDraft);
   loadDraft();
