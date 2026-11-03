@@ -27,12 +27,7 @@ First **5 partner agencies in 90 days**, each starting with 1–3 client account
 Every e-mail carries Rihards' name, White Label Media, a postal address and a one-line opt-out. Honour opt-outs the same day and keep a suppression list.
 
 ## The offer we lead with
-The page sells the model. Outreach needs a reason to reply now. **Owner decision:** pick one before launch.
-- **A. Free white-label audit (recommended):** we review one of their clients' Meta accounts and send the findings as a short report in *their* branding, within 5 working days. It shows the white-label product and costs a few hours.
-- **B. First month at cost:** first client account at a reduced fee. It converts faster but touches pricing.
-- **C. No offer, just a call:** simplest, lowest reply rate.
-
-The copy below assumes A. Remove the audit lines if you choose C.
+**A 20-minute call, nothing else** (owner decision, 2026-11-03). No free audit and no discount: the proof (Ads Manager screenshots) and the calculator carry the pitch. If replies stay low after the first 200 contacts, a free white-label audit of one client account is the next lever to test.
 
 ## List building (week 1, then 50 new prospects a week)
 1. **Directories:** Clutch, Sortlist, DesignRush and Google Maps ("branding agency Manchester", "creative agency Dublin" and so on), filtered by country and services.
@@ -62,7 +57,7 @@ Personalise the first line every time. A generic opener is the main reason cold 
 >
 > We're a small paid-social team in Riga that agencies hire under their own name. We set up and run the campaigns, you send the client a report with your logo on it, and you keep the margin.
 >
-> If it's useful, I'll audit one of your clients' Meta accounts for free and send the findings in your branding, so you can see exactly what your client would get.
+> Worth a 20-minute call to see if it fits how you work?
 >
 > Rihards Zeila
 > White Label Media · whitelabelmedia.eu
@@ -71,7 +66,7 @@ Personalise the first line every time. A generic opener is the main reason cold 
 **E2, day 4.** Subject: reply in thread
 > One example of the work: for a fashion outlet we ran Advantage+ campaigns that returned €35,877 in sales from €987 of ad spend. The Ads Manager screenshot is on our site: {{link}}
 >
-> That's the kind of result that would go out under {{agency}}'s name. Want the free audit on one of your clients?
+> That's the kind of result that would go out under {{agency}}'s name. Open to a short call this week or next?
 
 **E3, day 8.** Subject: `hiring vs. partnering`
 > If you've thought about hiring a media buyer instead: {{salary_line}}, before employer costs, and they need enough accounts to stay busy.
@@ -90,7 +85,7 @@ Personalise the first line every time. A generic opener is the main reason cold 
 Up to 20 connection requests a working day, and stay under LinkedIn's weekly invite limit.
 - **LI1, connect note (no pitch):** "Hi {{first_name}}, I run a small paid-social team in Riga that works behind agencies. I like what {{agency}} does with {{specific}}. Good to connect."
 - **LI2, two days after they accept:** "Thanks for connecting. Quick question: when clients ask {{agency}} for Meta ads, do you keep that in-house or pass it on?"
-- **LI3, only if they reply with interest:** the audit offer and the site link (with UTMs). In DACH, never pitch before they've replied.
+- **LI3, only if they reply with interest:** suggest a 20-minute call and share the site link (with UTMs). In DACH, never pitch before they've replied.
 
 ## Replies
 - **Interested:** offer two call times within 3 working days, and link the request form so their details arrive in the lead table.
@@ -108,18 +103,17 @@ Up to 20 connection requests a working day, and stay under LinkedIn's weekly inv
 ## Weekly rhythm
 - **Monday:** add 50 prospects with signals and personal lines.
 - **Tuesday–Thursday:** e-mails go out 09:00–11:00 local time; 20 LinkedIn connects a day; answer replies within 4 working hours.
-- **Friday:** review the numbers and update the copy that's underperforming. Record calls held and audits sent.
+- **Friday:** review the numbers and update the copy that's underperforming. Record calls held.
 
 ## Numbers to watch
-For each market and step: sent, replies, positive replies, calls booked, audits delivered, partners signed. Starting targets to beat: 5% positive replies on e-mail, 25% LinkedIn accept rate, 1 call per 50 prospects. These are rules of thumb, not measured benchmarks, so replace them with your own after the first 200 contacts.
+For each market and step: sent, replies, positive replies, calls booked, calls held, partners signed. Starting targets to beat: 5% positive replies on e-mail, 25% LinkedIn accept rate, 1 call per 50 prospects. These are rules of thumb, not measured benchmarks, so replace them with your own after the first 200 contacts.
 
 ## 30 / 60 / 90 days
-- **Days 1–30:** decide the offer, register and warm the sending domain, build the first 200 prospects (UK + IE), start LinkedIn by hand in every market right away.
-- **Days 31–60:** e-mail sequence live in UK, IE and US. First audits delivered. Rewrite the copy once with what the replies say.
+- **Days 1–30:** register and warm the sending domain, build the first 200 prospects (UK + IE), start LinkedIn by hand in every market right away.
+- **Days 31–60:** e-mail sequence live in UK, IE and US. First calls held. Rewrite the copy once with what the replies say.
 - **Days 61–90:** add the markets that pass the legal check, start retargeting, sign 5 partners.
 
 ## Open owner decisions
-1. Which offer: A, B or C.
-2. Sending domain name, and who is allowed to sign the e-mails.
-3. Postal address for the e-mail footer.
-4. Pricing currency (€ or $), still open from the site rebuild.
+1. Sending domain name, and who is allowed to sign the e-mails.
+2. Postal address for the e-mail footer.
+3. Pricing currency (€ or $), still open from the site rebuild.
