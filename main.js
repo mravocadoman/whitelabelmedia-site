@@ -125,7 +125,7 @@
   /* ---------- Where the visitor came from (first touch, kept for the visit) ---------- */
   const leadSource = (() => {
     const q = new URLSearchParams(location.search);
-    const utm = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term'].map((k) => q.get(k)).filter(Boolean).join('/');
+    const utm = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'].map((k) => q.get(k)).filter(Boolean).join('/');
     let s = utm ? 'utm:' + utm : '';
     if (q.get('gclid')) s += (s ? ' ' : '') + 'gclid';
     if (q.get('fbclid')) s += (s ? ' ' : '') + 'fbclid';
