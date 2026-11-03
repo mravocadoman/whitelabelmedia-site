@@ -38,6 +38,87 @@
     $$('.reveal').forEach((el) => el.classList.add('in'));
   }
 
+  /* ---------- Tracking: nothing from Google, Meta or LinkedIn loads until the visitor accepts ----------
+     Fill in an ID to switch that tag on; with all three empty there is no banner and no tags.
+     List only the switched-on providers in /privacy/#cookies. */
+  const TRACKING = { ga4: '', meta: '', linkedin: '' };
+  const CONSENT = 'wlm-consent';
+  const providers = [TRACKING.ga4 && 'Google Analytics', TRACKING.meta && 'Meta', TRACKING.linkedin && 'LinkedIn'].filter(Boolean);
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { window.dataLayer.push(arguments); }
+  gtag('consent', 'default', { ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', analytics_storage: 'denied', wait_for_update: 500 });
+
+  // Standard Meta events for conversions, custom ones for retargeting audiences. Never send personal data here.
+  const META = { generate_lead: 'Lead', contact_click: 'Contact' };
+  const META_CUSTOM = { calculator_use: 'CalculatorUsed', report_demo: 'ReportDemoUsed', form_start: 'RequestStarted', case_open: 'CaseOpened' };
+  function track(name, params = {}, eventId) {
+    try {
+      gtag('event', name, params);
+      if (!window.fbq) return;
+      if (META[name]) window.fbq('track', META[name], params, eventId ? { eventID: eventId } : undefined);
+      else if (META_CUSTOM[name]) window.fbq('trackCustom', META_CUSTOM[name], params);
+    } catch {} // analytics must never break the page
+  }
+  const once = (fn) => { let done = false; return (...a) => { if (!done) { done = true; fn(...a); } }; };
+
+  let tagsLoaded = false;
+  function loadTags() {
+    if (tagsLoaded) return;
+    tagsLoaded = true;
+    gtag('consent', 'update', { ad_storage: 'granted', ad_user_data: 'granted', ad_personalization: 'granted', analytics_storage: 'granted' });
+    const add = (src) => document.head.appendChild(Object.assign(document.createElement('script'), { async: true, src }));
+    if (TRACKING.ga4) {
+      gtag('js', new Date());
+      gtag('config', TRACKING.ga4);
+      add('https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(TRACKING.ga4));
+    }
+    if (TRACKING.meta && !window.fbq) {
+      // Meta's loader, trimmed: fbq queues calls until fbevents.js arrives.
+      const f = window.fbq = function () { f.callMethod ? f.callMethod.apply(f, arguments) : f.queue.push(arguments); };
+      window._fbq = f; f.push = f; f.loaded = true; f.version = '2.0'; f.queue = [];
+      add('https://connect.facebook.net/en_US/fbevents.js');
+      window.fbq('init', TRACKING.meta);
+      window.fbq('track', 'PageView');
+    }
+    if (TRACKING.linkedin) {
+      window._linkedin_partner_id = TRACKING.linkedin;
+      window._linkedin_data_partner_ids = [TRACKING.linkedin];
+      add('https://snap.licdn.com/li.lms-analytics/insight.min.js');
+    }
+  }
+
+  const consent = { get: () => { try { return localStorage.getItem(CONSENT); } catch { return null; } }, set: (v) => { try { localStorage.setItem(CONSENT, v); } catch {} } };
+  if (providers.length) {
+    const banner = document.createElement('div');
+    banner.className = 'consent';
+    banner.setAttribute('role', 'dialog');
+    banner.setAttribute('aria-label', 'Cookie choice');
+    banner.hidden = true;
+    banner.innerHTML = `<p>We’d like to use cookies from ${providers.join(', ').replace(/, ([^,]*)$/, ' and $1')} to see what works on this site and to measure our ads. Nothing loads unless you accept. <a href="/privacy/#cookies">Details</a></p>
+      <div class="consent-actions"><button type="button" class="btn btn-ghost btn-sm" data-choice="denied">Reject</button><button type="button" class="btn btn-accent btn-sm" data-choice="granted">Accept</button></div>`;
+    document.body.append(banner);
+    banner.addEventListener('click', (e) => {
+      const choice = e.target.closest('[data-choice]')?.dataset.choice;
+      if (!choice) return;
+      const before = consent.get();
+      consent.set(choice);
+      banner.hidden = true;
+      if (choice === 'granted') loadTags();
+      else if (before === 'granted') location.reload(); // drop scripts that already loaded
+    });
+    $$('[data-cookie-settings]').forEach((b) => b.addEventListener('click', () => { banner.hidden = false; $('[data-choice=granted]', banner).focus(); }));
+    if (consent.get() === 'granted') loadTags();
+    else if (!consent.get()) banner.hidden = false;
+  } else {
+    $$('[data-cookie-settings]').forEach((b) => { b.hidden = true; });
+  }
+
+  // WhatsApp, e-mail and phone links count as contact on every page.
+  document.addEventListener('click', (e) => {
+    const a = e.target.closest('a[href^="mailto:"], a[href^="tel:"], a[href*="wa.me/"]');
+    if (a) track('contact_click', { method: a.href.startsWith('mailto:') ? 'email' : a.href.startsWith('tel:') ? 'phone' : 'whatsapp' });
+  });
+
   const wizard = $('#wizard');
   if (!wizard) return; // the rest is the homepage only
 
@@ -82,6 +163,9 @@
     if (!f.value || f.value === lastDemoName) { f.value = raw.trim(); saveDraft(); }
     lastDemoName = raw.trim();
   }
+  const demoUsed = once(() => track('report_demo'));
+  demo.addEventListener('input', demoUsed);
+  demo.addEventListener('change', demoUsed);
   demo.elements.agency.addEventListener('input', (e) => setAgency(e.target.value));
   demo.addEventListener('change', (e) => {
     if (e.target.name === 'color') setBrand(e.target.value);
@@ -157,8 +241,10 @@
   const lang = (navigator.language || '').toLowerCase();
   c.market.value = lang.startsWith('nl') ? 'nl' : lang === 'en-gb' ? 'uk' : lang === 'en-us' ? 'us' : 'de';
   setMarket(c.market.value);
+  const calcUsed = once(() => track('calculator_use'));
   calc.addEventListener('input', (e) => {
     calcTouched = true;
+    calcUsed();
     if (e.target.name === 'salary' && c.market.value !== 'custom') { c.market.value = 'custom'; $('#salary-source').textContent = MARKETS.custom.note; }
     runCalc();
   });
@@ -175,7 +261,10 @@
   });
 
   /* ---------- Case dialogs ---------- */
-  $$('[data-case]').forEach((btn) => btn.addEventListener('click', () => $('#' + btn.dataset.case).showModal()));
+  $$('[data-case]').forEach((btn) => btn.addEventListener('click', () => {
+    $('#' + btn.dataset.case).showModal();
+    track('case_open', { case_name: $('.case-name', btn).textContent });
+  }));
   $$('.case-dialog').forEach((d) => {
     $('.dialog-close', d).addEventListener('click', () => d.close());
     d.addEventListener('click', (e) => { if (e.target === d) d.close(); }); // click on the backdrop
@@ -220,6 +309,7 @@
     next.hidden = n === 3;
     submit.hidden = n !== 3;
     say('');
+    if (n > 1) track('form_step', { step: n });
     if (focus) steps[n - 1].querySelector('input:not([type=hidden]), select, textarea')?.focus({ preventScroll: true });
   }
 
@@ -263,20 +353,23 @@
       else if (el.type === 'radio') { if (el.name in d) el.checked = d[el.name] === el.value; } else if (el.name in d) el.value = d[el.name];
     }
   }
+  wizard.addEventListener('input', once(() => track('form_start')));
   wizard.addEventListener('input', saveDraft);
   wizard.addEventListener('change', saveDraft);
   loadDraft();
 
   /* ---------- Submit ---------- */
   async function sendLead(payload) {
+    // The same id goes to the pixel and to n8n, so a server-side Conversions API event can be deduplicated later.
+    const eventId = 'lead.' + Date.now() + '.' + Math.random().toString(36).slice(2, 10);
     // text/plain keeps this a "simple" request: no CORS preflight.
     const res = await fetch(LEAD_URL, {
       method: 'POST',
       headers: { 'Content-Type': 'text/plain' },
-      body: JSON.stringify({ ...payload, source: leadSource, page: location.href.split('#')[0], t: Date.now() - loadedAt }),
+      body: JSON.stringify({ ...payload, event_id: eventId, source: leadSource, page: location.href.split('#')[0], t: Date.now() - loadedAt }),
     });
     if (!res.ok) throw new Error('HTTP ' + res.status);
-    (window.dataLayer = window.dataLayer || []).push({ event: 'generate_lead', lead_model: payload.model });
+    track('generate_lead', { lead_model: payload.model, country: payload.country, accounts: payload.accounts }, eventId);
   }
 
   wizard.addEventListener('submit', async (e) => {

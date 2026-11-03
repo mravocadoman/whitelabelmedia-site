@@ -328,6 +328,13 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .foot .logo { color: var(--paper); }
 .foot a { color: var(--paper); }
 
+/* ---------- Cookie banner ---------- */
+.consent { position: fixed; left: 16px; bottom: 16px; z-index: 60; width: min(440px, 100% - 32px); background: var(--ink-2); color: var(--paper); border: 1px solid var(--line-dark); border-radius: var(--r-lg); padding: 18px 20px; box-shadow: 0 20px 60px -20px rgba(0, 0, 0, .6); font-size: .92rem; }
+.consent p { margin: 0 0 14px; color: #c9cbd1; }
+.consent a { color: var(--accent); }
+.consent-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.linklike { background: none; border: 0; padding: 0; color: inherit; text-decoration: underline; cursor: pointer; font-size: inherit; }
+
 /* ---------- Privacy page ---------- */
 .page { padding: 64px 0 96px; }
 .prose { max-width: 760px; }

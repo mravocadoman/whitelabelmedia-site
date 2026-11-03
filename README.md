@@ -25,6 +25,14 @@ Port 4174 matters: the n8n workflow only echoes CORS for `localhost:4174`, `127.
 - Calculator salary presets (`MARKETS` in `main.js`) and the "€4,409" on the page: gehalt.de (DE), Searchlab (NL), Digital Waffle (UK), Indeed (US), GBP/USD at the ECB rate of 3 Nov 2026. Update the Sources list in `index.html` at the same time.
 - Report demo data is fictional and labelled "Sample data". Its numbers add up (spend × ROAS = purchase value, weekly bars sum to the total); keep it that way if you change them.
 
+## Tracking
+
+`TRACKING` at the top of the tracking block in `main.js` holds the GA4, Meta Pixel and LinkedIn Insight IDs. Empty IDs mean no banner and no third-party requests. With any ID set, a cookie banner appears, Consent Mode v2 starts denied, and nothing from Google, Meta or LinkedIn loads until the visitor presses Accept ("Cookie settings" in the footer reopens it; rejecting after accepting reloads the page).
+
+Events (GA4 name → Meta): `generate_lead` → `Lead` (with an `eventID` that is also sent to n8n as `event_id`, for Conversions API deduplication later), `contact_click` → `Contact`, `calculator_use` → `CalculatorUsed`, `report_demo` → `ReportDemoUsed`, `form_start` → `RequestStarted`, `case_open` → `CaseOpened`, plus GA4-only `form_step`. Never put names, e-mails or messages in event params.
+
+When you set or remove an ID, keep the provider list under Cookies in `privacy/index.html` in step.
+
 ## Leads
 
 The request form POSTs `text/plain` JSON to the n8n workflow **White Label Media — leads** (`fMjOqDJ0wQo4htUj`, webhook `/webhook/wlm-lead?k=wlm-eu-2026`). The workflow:
