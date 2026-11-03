@@ -97,7 +97,7 @@ Up to 20 connection requests a working day, and stay under LinkedIn's weekly inv
 ## Alongside outreach
 - **LinkedIn posts by Rihards, twice a week:** case breakdowns, the hire-vs-partner maths, what a white-label report looks like. Prospects check the profile after a DM.
 - **Paid retargeting** once the Meta and LinkedIn IDs are in: site visitors who used the calculator or opened a case (custom events `CalculatorUsed`, `CaseOpened`).
-- **Partnerships:** ask the three agencies quoted on the site (Addtwo, Artisuno, Creo Dizains) for one introduction each. Referral fee from €450 per signed client applies.
+- **Partnerships:** ask Addtwo (quoted on the site) and any other agency you have worked with for one introduction each. Referral fee from €450 per signed client applies.
 - **German landing page:** only if DACH replies show demand. The site is English only.
 
 ## Weekly rhythm
