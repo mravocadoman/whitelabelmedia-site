@@ -114,7 +114,7 @@ Everything is in the tracker: the **Drafts** tab has the text, the **Prospects**
 | Wed 11 Nov | E1, 4 e-mails | Bearded Fellows, WCS, Escalate, Walsh:PR |
 | Thu 12 Nov | E1, 4 e-mails | Creo Design, Beyond, Meor Studio, Ellodave (David's address is unverified: send last) |
 | 2 days after a LinkedIn accept | LI2 from the Drafts tab | whoever accepted |
-| E1 + 3, + 7, + 13 days | E2, E3, E4 (write them from the sequence below, in the same thread) | anyone who hasn't replied |
+| E1 + 3, + 7, + 13 days | E2, E3, E4 from the Drafts tab (E2 and E4 as replies in the E1 thread, E3 with its own subject) | anyone who hasn't replied |
 
 **After every touch, update the row:** Status → Contacted (or Replied, Call booked…), Last touch → today, Step → the message you sent, Next touch → the next date from the table. Anyone who says no or asks to stop: tick Opt-out and add them to the Opt-outs tab the same day.
 
