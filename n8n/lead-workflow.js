@@ -184,7 +184,7 @@ const mail = node({
     parameters: {
       resource: 'message',
       operation: 'send',
-      sendTo: 'rihards@marketingaskola.lv',
+      sendTo: 'rihards@whitelabelmedia.eu',
       subject: expr("{{ $('Parse and gate').item.json.subject }}"),
       emailType: 'text',
       message: expr("{{ $('Parse and gate').item.json.detail }}"),

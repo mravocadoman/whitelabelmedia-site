@@ -1,5 +1,7 @@
 # E-mail on whitelabelmedia.eu (2026-11-04)
 
+**Done 2026-11-04:** MX switched to Google (`smtp.google.com`), SPF set to Google only, DKIM record added and authentication started in Google Admin. Checked on ns1.siteground.net and 8.8.8.8; a test e-mail to the address did not bounce. The site's contact address and the n8n lead e-mails now use `rihards@whitelabelmedia.eu`.
+
 `rihards@whitelabelmedia.eu` is a Google Workspace user in the Marketinga Skola Workspace, where whitelabelmedia.eu is a verified secondary domain. SiteGround had no mailboxes on the domain, so moving its mail to Google loses nothing.
 
 ## DNS (SiteGround → Site Tools for whitelabelmedia.eu → Domain → DNS Zone Editor)

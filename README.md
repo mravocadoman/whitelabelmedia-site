@@ -40,7 +40,7 @@ The request form POSTs `text/plain` JSON to the n8n workflow **White Label Media
 1. Rejects posts with a bad key, a filled honeypot, a fill time under 3 s, no consent, no agency, or an invalid e-mail.
 2. Saves the request to the n8n data table **White Label Media leads** (`UT1N4Ax18x9oryqJ`, status `new`).
 3. Answers the site.
-4. E-mails rihards@marketingaskola.lv with reply-to set to the agency contact.
+4. E-mails rihards@whitelabelmedia.eu with reply-to set to the agency contact.
 5. Sends a Telegram message to Rihards' private chat.
 
 Failures go to the shared alert workflow. The privacy notice promises deletion 12 months after a request that doesn't turn into a partnership.

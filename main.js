@@ -399,7 +399,7 @@
       done.hidden = false;
       done.focus();
     } catch {
-      say('Sorry, that didn’t go through. Your answers are saved, so please try again in a moment, or e-mail rihards@marketingaskola.lv.', 'error');
+      say('Sorry, that didn’t go through. Your answers are saved, so please try again in a moment, or e-mail rihards@whitelabelmedia.eu.', 'error');
     } finally {
       submit.disabled = false;
     }
