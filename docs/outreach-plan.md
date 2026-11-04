@@ -102,6 +102,24 @@ Up to 20 connection requests a working day, and stay under LinkedIn's weekly inv
 - **Partnerships:** ask Addtwo (quoted on the site) and any other agency you have worked with for one introduction each. Referral fee from €450 per signed client applies.
 - **German landing page:** only if DACH replies show demand. The site is English only.
 
+## Launch schedule (from 2026-11-04)
+Everything is in the tracker: the **Drafts** tab has the text, the **Prospects** tab has the dates. A next-touch date that's due turns lime.
+
+| Day | What | Who |
+|---|---|---|
+| Wed 4 Nov | LinkedIn connection request (LI1) | the 12 UK/Ireland contacts (rows 2–13) |
+| Thu 5 Nov | LinkedIn connection request (LI1) | the 12 NL/Nordic contacts (rows 14–25) |
+| Every day from 4 Nov | Warm up rihards@whitelabelmedia.eu: send and answer a few normal e-mails | |
+| Tue 10 Nov | E1 by hand from Gmail, 4 e-mails | Garnett Keeler, Prohibition, Trendy Grandad, NU Creative |
+| Wed 11 Nov | E1, 4 e-mails | Bearded Fellows, WCS, Escalate, Walsh:PR |
+| Thu 12 Nov | E1, 4 e-mails | Creo Design, Beyond, Meor Studio, Ellodave (David's address is unverified: send last) |
+| 2 days after a LinkedIn accept | LI2 from the Drafts tab | whoever accepted |
+| E1 + 3, + 7, + 13 days | E2, E3, E4 (write them from the sequence below, in the same thread) | anyone who hasn't replied |
+
+**After every touch, update the row:** Status → Contacted (or Replied, Call booked…), Last touch → today, Step → the message you sent, Next touch → the next date from the table. Anyone who says no or asks to stop: tick Opt-out and add them to the Opt-outs tab the same day.
+
+E-mails go out from `rihards@whitelabelmedia.eu`, plain text, written in Gmail (not pasted with formatting), at most 4 a day for the first two weeks.
+
 ## Weekly rhythm
 - **Monday:** add 50 prospects with signals and personal lines.
 - **Tuesday–Thursday:** e-mails go out 09:00–11:00 local time; 20 LinkedIn connects a day; answer replies within 4 working hours.
