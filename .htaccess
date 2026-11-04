@@ -1,0 +1,6 @@
+# whitelabelmedia.eu is a static site (WordPress removed 2026-11-04).
+ErrorDocument 404 /404.html
+Options -Indexes
+
+# Old WordPress URLs (/index.php, /index.php/feed/ ...) go to the homepage.
+RedirectMatch 301 ^/index\.php(/.*)?$ /

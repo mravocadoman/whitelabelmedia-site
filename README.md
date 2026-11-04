@@ -50,10 +50,10 @@ Failures go to the shared alert workflow. The privacy notice promises deletion 1
 Push to `main`, and GitHub Actions (`.github/workflows/deploy.yml`) does the rest, the same way as Rent in Riga and Impromotion:
 
 1. Stamps `?v=<commit>` on our own CSS, JS and image links.
-2. Rsyncs the site files over SSH (port 18765) into `www/whitelabelmedia.eu/public_html/`, without `--delete`, so the old WordPress install stays in place.
+2. Rsyncs the site files over SSH (port 18765) into `www/whitelabelmedia.eu/public_html/`, without `--delete` (the server also keeps `.well-known` there).
 3. Flushes the SiteGround cache.
 
-`index.html` takes precedence over WordPress's `index.php`, and real files and folders bypass the WordPress rewrite in `.htaccess`.
+WordPress was removed on 2026-11-04: its files were moved to `~/removed-from-public/2026-11-04-wordpress` on the server (outside the web root) and can be moved back. Its database still exists in Site Tools. Our `.htaccess` serves `404.html` for missing pages and sends old `/index.php…` URLs to the homepage.
 
 `googlec3673720e3b0e240.html` verifies the site in Google Search Console. Never delete it.
 
