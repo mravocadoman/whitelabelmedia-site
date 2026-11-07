@@ -78,7 +78,7 @@ Personalise the first line every time. A generic opener is the main reason cold 
 `{{salary_line}}` per market, only from the sourced figures on the site:
 - UK: "UK social media roles average £46,267 a year (Digital Waffle 2026)"
 - US: "a US social media manager averages $65,712 a year (Indeed)"
-- Ireland: no sourced figure yet. Leave E3 out or find one first.
+- Ireland: no usable figure. Sources disagree 2× (Payscale ~€30k vs Morgan McKinley 2026 €65–75k for a Dublin social media manager, checked 2026-11-07), so the Irish E3 makes the point without a number.
 
 **E4, day 14.** Subject: reply in thread
 > Last one from me. If paid social comes up with a client, the request form takes two minutes: {{link}}. Or reply "later" and I'll check in next quarter.
@@ -113,6 +113,10 @@ Everything is in the tracker: the **Drafts** tab has the text, the **Prospects**
 | Tue 10 Nov | E1 by hand from Gmail, 4 e-mails | Garnett Keeler, Prohibition, Trendy Grandad, NU Creative |
 | Wed 11 Nov | E1, 4 e-mails | Bearded Fellows, WCS, Escalate, Walsh:PR |
 | Thu 12 Nov | E1, 4 e-mails | Creo Design, Beyond, Meor Studio, Ellodave (David's address is unverified: send last) |
+| Mon 9 Nov | LinkedIn connection request (LI1), batch 2 | the 18 new UK/IE contacts (rows 26–43; Proteus and Wildish need a founder name first) |
+| Mon 16 Nov | E1, 4 e-mails (batch 2) | Umpf, Tempt, Leopard Co, Skylark |
+| Tue 17 Nov | E1, 4 e-mails | R Comms, Cornerstone, Eden PR, We Are Pink |
+| Wed 18 Nov | E1, 4 e-mails | Erudite, Invoke, Mango Media, Heneghan |
 | 2 days after a LinkedIn accept | LI2 from the Drafts tab | whoever accepted |
 | E1 + 3, + 7, + 13 days | E2, E3, E4 from the Drafts tab (E2 and E4 as replies in the E1 thread, E3 with its own subject) | anyone who hasn't replied |
 
