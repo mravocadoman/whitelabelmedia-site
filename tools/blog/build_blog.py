@@ -64,7 +64,7 @@ def page(path, title, desc, body, schema=None, robots=None):
   <footer class="site-footer">
     <div class="wrap foot">
       <p class="logo"><span>White Label <b>Media</b></span></p>
-      <p>Riga, Latvia · <a href="mailto:rihards@whitelabelmedia.eu">rihards@whitelabelmedia.eu</a></p>
+      <p>Riga, Latvia · <a href="mailto:rihards@whitelabelmedia.eu">rihards@whitelabelmedia.eu</a> · <a href="https://www.linkedin.com/in/rihards-ze/" rel="noopener" target="_blank">LinkedIn</a></p>
       <p><a href="/">Home</a> · <a href="/blog/">Blog</a> · <a href="/privacy/">Privacy</a> · <button type="button" class="linklike" data-cookie-settings>Cookie settings</button> · © <span data-year>2026</span> White Label Media</p>
     </div>
   </footer>
@@ -101,7 +101,7 @@ def article(slug, title, h1, desc, lead, toc, content, faq=None):
     schema = [{
         "@context": "https://schema.org", "@type": "BlogPosting", "headline": h1, "description": desc,
         "datePublished": DATE, "dateModified": DATE, "inLanguage": "en",
-        "author": {"@type": "Person", "name": AUTHOR, "url": SITE + "/"},
+        "author": {"@type": "Person", "name": AUTHOR, "url": SITE + "/", "sameAs": ["https://www.linkedin.com/in/rihards-ze/"]},
         "publisher": {"@type": "Organization", "name": "White Label Media", "url": SITE + "/"},
         "mainEntityOfPage": SITE + path,
     }, {
@@ -119,7 +119,7 @@ def article(slug, title, h1, desc, lead, toc, content, faq=None):
     body = f"""    <article class="wrap prose post">
       <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/blog/">Blog</a></nav>
       <h1>{escape(h1)}</h1>
-      <p class="post-meta">By {AUTHOR} · {DATE_H}</p>
+      <p class="post-meta">By <a href="https://www.linkedin.com/in/rihards-ze/" rel="noopener" target="_blank">{AUTHOR}</a> · {DATE_H}</p>
       <p class="lead">{lead}</p>
       <nav class="toc" aria-label="In this article"><p class="eyebrow">In this article</p><ol>{toc_html}</ol></nav>
 {content}
