@@ -37,7 +37,7 @@ jobs:
           SG_USER: ${{ secrets.SG_USER }}
         run: |
           rsync -rvz --checksum -e "ssh -p 18765 -i $HOME/.ssh/deploy_key -o BatchMode=yes" \
-            index.html 404.html .htaccess styles.css main.js favicon.svg robots.txt sitemap.xml googlec3673720e3b0e240.html assets privacy \
+            index.html 404.html .htaccess styles.css main.js favicon.svg robots.txt sitemap.xml googlec3673720e3b0e240.html assets privacy blog \
             "$SG_USER@$SG_HOST:www/whitelabelmedia.eu/public_html/"
 
       - name: Flush SiteGround cache
