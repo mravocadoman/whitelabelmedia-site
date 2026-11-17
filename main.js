@@ -184,7 +184,7 @@
   });
 
   /* ---------- Margin calculator ----------
-     Gross salary presets, see the Sources list on the page. GBP and USD at the ECB reference rate of 3 Nov 2026. */
+     Gross salary presets, source shown under the salary field. GBP and USD at the ECB reference rate of 3 Nov 2026. */
   const MARKETS = {
     de: { month: 4409, note: 'Germany: median for a Performance-Marketing-Manager (gehalt.de, checked 3 Nov 2026).' },
     nl: { month: 39000 / 12, note: 'Netherlands: median for a Social Media Manager, €39,000 a year excl. holiday pay (Searchlab 2026).' },

@@ -89,6 +89,8 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .hl { color: var(--accent); }
 .lead { font-size: 1.2rem; color: #c9cbd1; max-width: 36rem; }
 .cta-row { display: flex; flex-wrap: wrap; gap: 12px; margin: 28px 0 40px; }
+.risk-line { margin: -24px 0 34px; font-size: .9rem; color: var(--muted-dark); }
+.pilot { background: color-mix(in srgb, var(--accent) 22%, #fff); border-radius: 12px; padding: 12px 14px; font-size: .95rem; }
 .proof { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; list-style: none; margin: 0; padding: 22px 0 0; border-top: 1px solid var(--line-dark); }
 .proof b { display: block; font-size: 1.7rem; font-weight: 800; letter-spacing: -.02em; color: #fff; }
 .proof span { display: block; font-size: .84rem; color: var(--muted-dark); line-height: 1.4; }
